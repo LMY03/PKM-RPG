@@ -1,17 +1,17 @@
-package ph.edu.dlsu.mobdeve.lin.jonathan.pokemon
+package ph.edu.dlsu.mobdeve.lin.jonathan.pkmrpg.database
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteException
+import ph.edu.dlsu.mobdeve.lin.jonathan.pkmrpg.model.pkm.Pokemon
 
 class PokemonDatabase (context: Context) {
-    // A private instance of the DB helper
-    private lateinit var databaseHandler : DatabaseHandler
 
-    // Initializes the databaseHandler instance using the context provided.
+    private var databaseHandler : DatabaseHandler
+
     init {
-        this.databaseHandler = DatabaseHandler(context)
+        this.databaseHandler = DatabaseHandler(context, Pokemon.DATABASE_NAME, Pokemon.DATABASE_VERSION)
     }
 
     @SuppressLint("Range")
@@ -22,7 +22,7 @@ class PokemonDatabase (context: Context) {
         val cursor: Cursor?
 
         try{
-            cursor = db.rawQuery("SELECT * FROM ${DatabaseHandler.PKM_TABLE}", null)
+            cursor = db.rawQuery("SELECT * FROM ${Pokemon.PKM_TABLE}", null)
         } catch (e: SQLiteException) {
             db.close()
             return ArrayList()

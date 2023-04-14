@@ -1,4 +1,4 @@
-package ph.edu.dlsu.mobdeve.lin.jonathan.pokemon
+package ph.edu.dlsu.mobdeve.lin.jonathan.pkmrpg.adapter
 
 import android.app.Activity
 import android.graphics.BitmapFactory
@@ -6,7 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import ph.edu.dlsu.mobdeve.lin.jonathan.pokemon.databinding.PokemonBinding
+import ph.edu.dlsu.mobdeve.lin.jonathan.pkmrpg.databinding.PokemonBinding
+import ph.edu.dlsu.mobdeve.lin.jonathan.pkmrpg.model.pkm.Pokemon
 
 class Adapter(private var pkms: ArrayList<Pokemon>, private var activity: Activity) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 

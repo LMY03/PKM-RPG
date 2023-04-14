@@ -1,4 +1,4 @@
-package ph.edu.dlsu.mobdeve.lin.jonathan.pokemon
+package ph.edu.dlsu.mobdeve.lin.jonathan.pkmrpg
 
 import org.junit.Test
 
